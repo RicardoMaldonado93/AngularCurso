@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
 import { Profesor } from '../../clases/profesor';
 
 @Component({
@@ -9,12 +9,19 @@ import { Profesor } from '../../clases/profesor';
 export class DetalleProfesorComponent implements OnInit {
 
   @Input() unProfesor: Profesor ;
+  @Output() borrarProfesor : EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   
    }
 
   ngOnInit() {
+  }
+
+  borrarRegistro(){
+
+    this.borrarProfesor.emit(this.unProfesor);
+    this.unProfesor = null;
   }
 
 }

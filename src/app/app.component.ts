@@ -22,6 +22,7 @@ export class AppComponent {
           { apellido: 'Mercurio' ,nombre:"Alfredo",legajo: 333 }
         ];
     }
+
   tomarAlumnoCreado(NuevoAlumno: Alumno)
   {
     this.listadoPrincipal.push(NuevoAlumno);   
@@ -31,13 +32,11 @@ export class AppComponent {
     this.alumnoSeleccionado=NuevoAlumno;   
   }
 
-  mostrarProfesor(unProfesor:Profesor){
+  mostrarProfesor(Profesor:Profesor){
     console.log(this.profesorParaMostrar );
     //this.profesorParaMostrar = unProfesor;
-    this.listadoProfesoresPrincipal.push(unProfesor);
+    this.listadoProfesoresPrincipal.push(Profesor);
   }
 
-  detalleProfesor(unProfesor:Profesor){
-    this.profesorParaMostrar = unProfesor;
-  }
+  
 }
